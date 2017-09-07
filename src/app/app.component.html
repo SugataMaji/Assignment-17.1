@@ -1,0 +1,12 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{title}}!!
+  </h1>
+<div *ngIf="users.length > 0; else empty"><h2>Users</h2></div>
+<ng-template #empty><h2>No users.</h2></ng-template>
+
+<div *ngFor="let user of users | slice:0:2 as total; index as i">
+    {{i+1}}/{{total.length}}: {{user.name}}
+</div>
+
